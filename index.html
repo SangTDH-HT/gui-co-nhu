@@ -1,165 +1,155 @@
 <!doctype html>
-<html lang="vi" class="khoa">
+<html lang="vi" class="dong">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gửi cô Như</title>
-<meta name="description" content="Một trang vở nhỏ gửi cô Như nhân ngày Nhà giáo Việt Nam 20.11.2026.">
+<meta name="description" content="Một lá thư nhỏ gửi cô Như nhân ngày Nhà giáo Việt Nam 20.11.2026.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#8f6a45">
+<meta name="theme-color" content="#ddd2c6">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gửi cô Như">
-<meta property="og:description" content="Một trang vở nhỏ nhân ngày Nhà giáo Việt Nam 20.11.">
-<meta property="og:image" content="https://sangtdh-ht.github.io/gui-co-nhu/og.jpg">
+<meta property="og:description" content="Một lá thư nhỏ nhân ngày Nhà giáo Việt Nam 20.11.">
+<meta property="og:image" content="https://sangtdh-ht.github.io/gui-co-nhu/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://sangtdh-ht.github.io/gui-co-nhu/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300..600&family=Playwrite+VN:wght@100..400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ephesis&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
+<canvas id="hat" aria-hidden="true"></canvas>
+
+<!-- ======= phong thư ======= -->
+<div class="canh" id="canh">
+  <div class="phong" id="phong">
+    <span class="bong-phong" aria-hidden="true"></span>
+    <span class="lung" aria-hidden="true"></span>
+
+    <div class="thu-nho" aria-hidden="true">
+      <p class="tn-ngay">Thứ Sáu, ngày 20 tháng 11 năm 2026</p>
+      <p class="tn-tieu">Chúc mừng cô!</p>
+      <p class="tn-gui">Gửi cô Như, cô giáo lớp 1D,</p>
+      <span class="tn-dong"></span><span class="tn-dong"></span><span class="tn-dong ngan"></span>
+    </div>
+
+    <svg class="tui" viewBox="0 0 70 100" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="t-trai" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efe6d8"/><stop offset="1" stop-color="#e6dac7"/></linearGradient>
+        <linearGradient id="t-phai" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#ece2d2"/><stop offset="1" stop-color="#e2d5c1"/></linearGradient>
+        <linearGradient id="t-day" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f6efe4"/><stop offset="1" stop-color="#efe5d5"/></linearGradient>
+        <filter id="t-bong" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="-.5" stdDeviation=".7" flood-color="#6b4a2e" flood-opacity=".22"/></filter>
+        <filter id="t-mo" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="1.2"/></filter>
+      </defs>
+      <path d="M0 0L35 53L0 100Z" fill="url(#t-trai)"/>
+      <path d="M70 0L35 53L70 100Z" fill="url(#t-phai)"/>
+      <path d="M0 100L35 47L70 100Z" fill="url(#t-day)" filter="url(#t-bong)"/>
+      <path class="bong-nap" d="M0 0H70L35 57.5Z" fill="#5a3b22" opacity=".2" filter="url(#t-mo)"/>
+    </svg>
+
+    <div class="chu-tui" aria-hidden="true">
+      <p class="ct-gui">Gửi cô Như</p>
+      <p class="ct-lop">cô giáo lớp 1D, Trường Tiểu học Cẩm Trung</p>
+      <p class="ct-ngay">Ngày Nhà giáo Việt Nam</p>
+    </div>
+
+    <div class="nap" aria-hidden="true">
+      <span class="mat ngoai"></span>
+      <span class="mat trong"></span>
+    </div>
+
+    <button class="niem" id="niem" type="button" aria-label="Mở thư">
+      <svg class="canh-hoa" viewBox="-60 -60 120 120" aria-hidden="true">
+        <g stroke-linecap="round" fill="none">
+          <g>
+            <path d="M-2 0C-10-30-6-58 8-88" stroke="#8a7a52" stroke-width="1.4"/>
+            <g fill="#b9a3d6" stroke="none"><ellipse cx="8" cy="-82" rx="3.6" ry="2.3" transform="rotate(70 8 -82)"/><ellipse cx="5" cy="-75" rx="3.5" ry="2.2" transform="rotate(100 5 -75)"/><ellipse cx="2" cy="-68" rx="3.2" ry="2" transform="rotate(80 2 -68)"/><ellipse cx="0" cy="-61" rx="3" ry="2" transform="rotate(105 0 -61)"/><ellipse cx="-1" cy="-54" rx="2.6" ry="1.8" transform="rotate(85 -1 -54)"/></g>
+          </g>
+          <g transform="rotate(50)">
+            <path d="M-8 6C-30 30-52 60-74 98" stroke="#8a7a52" stroke-width="1.6"/>
+            <path d="M-30 46C-40 44-46 50-48 58C-40 58-33 54-30 46Z" fill="#9aa178" stroke="none"/>
+            <g fill="#b9a3d6" stroke="none"><ellipse cx="-64" cy="82" rx="3.6" ry="2.3" transform="rotate(-50 -64 82)"/><ellipse cx="-60" cy="76" rx="3.6" ry="2.3" transform="rotate(-30 -60 76)"/><ellipse cx="-56" cy="70" rx="3.5" ry="2.2" transform="rotate(-60 -56 70)"/><ellipse cx="-52" cy="64" rx="3.2" ry="2" transform="rotate(-35 -52 64)"/><ellipse cx="-48" cy="58" rx="3" ry="2" transform="rotate(-55 -48 58)"/><ellipse cx="-44" cy="52" rx="2.6" ry="1.8" transform="rotate(-40 -44 52)"/></g>
+          </g>
+          <g transform="rotate(-62)">
+            <path d="M4 4C20 34 34 66 42 104" stroke="#8a7a52" stroke-width="1.4"/>
+            <path d="M24 50C34 46 40 50 44 58C36 60 28 58 24 50Z" fill="#9aa178" stroke="none"/>
+            <g fill="#f6f2ea" stroke="#d6ccbb" stroke-width=".5"><circle cx="38" cy="94" r="3.2"/><circle cx="44" cy="88" r="2.8"/><circle cx="33" cy="86" r="2.6"/><circle cx="40" cy="80" r="2.4"/><circle cx="31" cy="76" r="2.1"/><circle cx="36" cy="70" r="1.9"/></g>
+          </g>
+        </g>
+      </svg>
+      <span class="nua trai"><svg viewBox="-50 -50 100 100"><use href="#sap"/></svg></span>
+      <span class="nua phai"><svg viewBox="-50 -50 100 100"><use href="#sap"/></svg></span>
+    </button>
+  </div>
+  <p class="goi-y">Chạm vào dấu niêm để mở thư</p>
+</div>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="g-vang" x1="0" y1="-7" x2="0" y2="7" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fbe7a6"/><stop offset=".45" stop-color="#d4a94c"/><stop offset="1" stop-color="#8a6420"/>
-    </linearGradient>
-    <linearGradient id="g-tim" x1="0" y1="-8" x2="0" y2="8" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3a2280"/><stop offset=".22" stop-color="#8a6be0"/><stop offset=".42" stop-color="#5b3cb4"/><stop offset="1" stop-color="#231256"/>
-    </linearGradient>
-    <linearGradient id="g-den" x1="0" y1="-7" x2="0" y2="7" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1b1622"/><stop offset=".3" stop-color="#6d6577"/><stop offset=".55" stop-color="#2a2430"/><stop offset="1" stop-color="#0f0c13"/>
-    </linearGradient>
-    <linearGradient id="g-bac" x1="0" y1="-4" x2="0" y2="4" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8d939b"/><stop offset=".35" stop-color="#f4f6f8"/><stop offset="1" stop-color="#6b7178"/>
-    </linearGradient>
-    <linearGradient id="g-trong" x1="0" y1="-7" x2="0" y2="7" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#cfd6dd" stop-opacity=".95"/><stop offset=".3" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#b7c0c9" stop-opacity=".95"/>
-    </linearGradient>
-    <linearGradient id="g-do" x1="0" y1="-8" x2="0" y2="8" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8e111b"/><stop offset=".28" stop-color="#ff6b6f"/><stop offset=".5" stop-color="#d4202c"/><stop offset="1" stop-color="#6e0b13"/>
-    </linearGradient>
-
-    <!-- bút máy mực tím: ngòi ở gốc toạ độ, thân kéo sang phải -->
-    <g id="but-may">
-      <path d="M0 0C6-1.6 13-4.6 21-6.2L31-6.6V6.6L21 6.2C13 4.6 6 1.6 0 0Z" fill="url(#g-vang)"/>
-      <path d="M1.5 0H18" stroke="#5b4012" stroke-width=".9" stroke-linecap="round"/>
-      <circle cx="19" cy="0" r="1.4" fill="#5b4012"/>
-      <rect x="31" y="-6.8" width="17" height="13.6" rx="1.5" fill="url(#g-den)"/>
-      <rect x="48" y="-8.2" width="3.2" height="16.4" fill="url(#g-vang)"/>
-      <rect x="51" y="-8.2" width="104" height="16.4" rx="4" fill="url(#g-tim)"/>
-      <rect x="56" y="-6.4" width="92" height="2.2" rx="1.1" fill="#fff" opacity=".28"/>
+    <radialGradient id="s-1" cx=".36" cy=".3" r=".8"><stop offset="0" stop-color="#e45a63"/><stop offset=".45" stop-color="#a71e2b"/><stop offset="1" stop-color="#5a0911"/></radialGradient>
+    <radialGradient id="s-2" cx=".62" cy=".72" r=".75"><stop offset="0" stop-color="#7a0f18"/><stop offset="1" stop-color="#c3343f"/></radialGradient>
+    <filter id="s-bong" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="1.2" dy="3.5" stdDeviation="2.6" flood-color="#3a0a0e" flood-opacity=".5"/></filter>
+    <g id="sap">
+      <path filter="url(#s-bong)" fill="url(#s-1)" d="M0-40C9-42 15-34 24-34C33-32 33-23 38-16C43-7 38 0 40 9C42 20 33 24 29 31C24 38 14 36 7 42C-2 45-9 38-18 38C-27 36-29 27-36 22C-43 14-38 5-40-4C-42-15-33-18-29-25C-24-34-15-33-7-38C-5-40-3-40 0-40Z"/>
+      <circle r="26" fill="url(#s-2)"/>
+      <circle r="26" fill="none" stroke="#ea6c75" stroke-opacity=".55" stroke-width="1.1"/>
+      <circle r="20.5" fill="none" stroke="#5a0911" stroke-opacity=".55" stroke-width=".9"/>
+      <text y="6.5" text-anchor="middle" font-family="EB Garamond, serif" font-size="18" font-weight="500" fill="#e9767e" opacity=".6" transform="translate(-.6 -.6)">20·11</text>
+      <text y="6.5" text-anchor="middle" font-family="EB Garamond, serif" font-size="18" font-weight="500" fill="#5a0911" opacity=".85">20·11</text>
+      <ellipse cx="-14" cy="-22" rx="9" ry="4" fill="#fff" opacity=".18" transform="rotate(-30 -14 -22)"/>
     </g>
-
-    <!-- bút bi đỏ: thân trong, ruột đỏ, đuôi đỏ -->
-    <g id="but-bi">
-      <path d="M0 0L9-2.6V2.6Z" fill="url(#g-bac)"/>
-      <path d="M9-3.6L22-6.2V6.2L9 3.6Z" fill="url(#g-trong)"/>
-      <rect x="10" y="-1.3" width="104" height="2.6" rx="1.3" fill="#d4202c"/>
-      <rect x="22" y="-7" width="96" height="14" rx="2" fill="url(#g-trong)" opacity=".8"/>
-      <rect x="26" y="-5.6" width="86" height="1.8" rx=".9" fill="#fff" opacity=".7"/>
-      <rect x="116" y="-7.6" width="26" height="15.2" rx="4" fill="url(#g-do)"/>
+    <!-- cành hoa ép khô trên thư -->
+    <g id="hoa-ep">
+      <g stroke-linecap="round" fill="none" stroke="#8d7f57">
+        <path d="M10 150C40 110 70 70 120 20" stroke-width="1.5"/>
+        <path d="M44 106C38 88 40 72 50 58" stroke-width="1.1"/>
+        <path d="M70 76C82 70 96 70 108 76" stroke-width="1.1"/>
+        <path d="M30 128C18 118 8 116 0 118" stroke-width="1"/>
+      </g>
+      <g fill="#a6ad84">
+        <path d="M58 92C50 84 50 74 56 66C62 74 62 84 58 92Z"/><path d="M84 66C88 56 96 52 106 52C102 62 94 66 84 66Z"/><path d="M22 136C14 136 8 130 6 122C14 122 20 128 22 136Z"/>
+      </g>
+      <g fill="#b8a2d6">
+        <ellipse cx="120" cy="20" rx="4" ry="2.6" transform="rotate(-40 120 20)"/><ellipse cx="114" cy="26" rx="4" ry="2.6" transform="rotate(-20 114 26)"/><ellipse cx="109" cy="32" rx="3.8" ry="2.4" transform="rotate(-50 109 32)"/><ellipse cx="104" cy="38" rx="3.6" ry="2.3" transform="rotate(-25 104 38)"/><ellipse cx="99" cy="44" rx="3.4" ry="2.2" transform="rotate(-45 99 44)"/><ellipse cx="95" cy="50" rx="3" ry="2" transform="rotate(-30 95 50)"/>
+        <ellipse cx="50" cy="58" rx="3.4" ry="2.2" transform="rotate(70 50 58)"/><ellipse cx="47" cy="65" rx="3.2" ry="2.1" transform="rotate(100 47 65)"/><ellipse cx="45" cy="72" rx="3" ry="2" transform="rotate(80 45 72)"/>
+      </g>
+      <g fill="#f7f2e8" stroke="#d9cfbe" stroke-width=".5"><circle cx="0" cy="118" r="3"/><circle cx="5" cy="112" r="2.6"/><circle cx="-3" cy="110" r="2.4"/><circle cx="3" cy="105" r="2.1"/><circle cx="108" cy="76" r="2.8"/><circle cx="113" cy="71" r="2.4"/><circle cx="110" cy="82" r="2.2"/></g>
+      <g fill="#e9a8b4"><circle cx="76" cy="62" r="4.5"/><circle cx="76" cy="62" r="2" fill="#d9cf8e"/></g>
     </g>
   </defs>
 </svg>
 
-<div class="ban-dong" id="lop-bia">
-  <button class="vo" id="mo-vo" type="button" aria-label="Mở vở">
-    <span class="ruot" aria-hidden="true"></span>
-    <span class="bia" aria-hidden="true">
-      <span class="mat-truoc">
-        <span class="khung">
-          <span class="ten-vo">Vở ô li</span>
-          <svg class="huy-hieu" viewBox="0 0 120 80" aria-hidden="true">
-            <defs>
-              <linearGradient id="g-nhu" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#8a6a2c"/><stop offset=".3" stop-color="#f1d58a"/><stop offset=".55" stop-color="#a8823b"/><stop offset=".78" stop-color="#f6e3a1"/><stop offset="1" stop-color="#8d6c2e"/>
-              </linearGradient>
-            </defs>
-            <g fill="none" stroke="url(#g-nhu)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M60 72C48 64 30 62 10 65V31C30 28 48 30 60 38C72 30 90 28 110 31V65C90 62 72 64 60 72Z"/>
-              <path d="M60 38V72"/>
-              <path d="M20 41C31 39.5 42 40 52 43M20 49C31 47.5 42 48 52 51M20 57C31 55.5 42 56 52 59M100 41C89 39.5 78 40 68 43M100 49C89 47.5 78 48 68 51M100 57C89 55.5 78 56 68 59" stroke-width="1.1" opacity=".75"/>
-              <path d="M60 38C60 29 61 20 60 9"/>
-            </g>
-            <g fill="url(#g-nhu)">
-              <path d="M60 26C51 26 45 21 43 13C51 13 58 17 60 26Z"/>
-              <path d="M60 19C68 18 74 13 76 5C68 5 61 10 60 19Z"/>
-            </g>
-          </svg>
-          <span class="nhan">
-            <span class="dong-nhan"><span class="nhan-ghi">Vở:</span><span class="nhan-viet">Lời chúc</span></span>
-            <span class="dong-nhan"><span class="nhan-ghi">Họ và tên:</span><span class="nhan-viet">Nguyễn Thị Như</span></span>
-            <span class="dong-nhan"><span class="nhan-ghi">Lớp:</span><span class="nhan-viet">1D</span></span>
-            <span class="dong-nhan"><span class="nhan-ghi">Trường:</span><span class="nhan-viet">Tiểu học Cẩm Trung</span></span>
-            <span class="dong-nhan"><span class="nhan-ghi">Năm học:</span><span class="nhan-viet">2026 – 2027</span></span>
-          </span>
-          <span class="chan-bia">Ngày Nhà giáo Việt Nam 20.11</span>
-        </span>
-      </span>
-      <span class="mat-sau"></span>
-    </span>
-  </button>
-  <p class="goi-y">Chạm vào vở để mở</p>
-</div>
+<!-- ======= lá thư ======= -->
+<main class="la-thu" id="la-thu" tabindex="-1">
+  <article class="giay">
+    <svg class="hoa-ep tren" viewBox="-10 0 140 160" aria-hidden="true"><use href="#hoa-ep"/></svg>
+    <p class="ngay">Thứ Sáu, ngày 20 tháng 11 năm 2026</p>
+    <h1 class="tieu-de"><span>Chúc mừng cô!</span></h1>
+    <p class="gui">Gửi cô Như, cô giáo lớp 1D,</p>
+    <div class="than">
+      <p>Người ta gọi nghề giáo là nghề gieo chữ. Với cô giáo lớp Một, điều đó đúng theo nghĩa đen: những chữ đầu tiên trong đời các con là do cô cầm tay uốn từng nét.</p>
+      <p>Mới mười một tuần, lớp 1D đã đi từ những nét móc, nét cong đầu tiên tới vần ac, ăc, âc. Mỗi tiết học chỉ ba mươi lăm phút, nhưng phía sau là những buổi tối soạn bài, làm phiếu, chuẩn bị tranh ảnh và bảng con cho ngày hôm sau. Từng phụ cô soạn những tập giáo án hơn bốn mươi trang mỗi tuần mới thấy hết.</p>
+      <p>Rồi các con sẽ lớn, sẽ quên tên bài học đầu tiên. Nhưng nét chữ các con viết suốt đời vẫn giữ dáng chữ cô dạy năm lớp Một.</p>
+      <p>Nhân ngày Nhà giáo Việt Nam, chúc cô luôn khoẻ, bình an, và giữ mãi niềm vui mỗi sáng bước vào lớp.</p>
+    </div>
+    <p class="ky" id="ky">Sáng</p>
+    <p class="tai-but">Tái bút: Mười điểm cho cô, khỏi phải chấm lại.</p>
+    <svg class="hoa-ep duoi" viewBox="-10 0 140 160" aria-hidden="true"><use href="#hoa-ep"/></svg>
+  </article>
+</main>
 
-<div class="ban">
-  <main class="trang" id="trang" tabindex="-1">
+<button class="nut-nhac" id="nut-nhac" type="button" aria-label="Tắt nhạc" aria-pressed="true">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6l11-2.2v11.7a2.5 2.5 0 1 1-2-2.45V7.4L9 8.8Z" fill="currentColor"/><path class="gach" d="M4 4l16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
 
-    <section class="mo-dau">
-      <p class="viet ngay" data-xh="1.3" data-de="1"><span>Thứ Sáu, ngày 20 tháng 11 năm 2026</span></p>
-      <h1 class="viet tieu-de" data-xh="4" data-de="3"><span>Chúc mừng cô!</span></h1>
-      <p class="viet gui" data-xh="1.6" data-de="2"><span>Gửi cô Như, cô giáo lớp 1D</span></p>
-    </section>
-
-    <section class="tap-viet" aria-label="Những dòng tập viết của lớp 1D">
-      <p class="in">Tuần đầu năm học, các con tập những nét móc, nét cong. Tuần thứ hai là chữ a. Tuần này, lớp 1D đã viết tới vần ac, ăc, âc.</p>
-      <div class="dong-tv" data-kieu="net" aria-label="Các nét cơ bản"><span class="le-ghi">Tuần<b>1</b></span></div>
-      <div class="dong-tv" data-mau="a" data-to="2" aria-label="Chữ a"><span class="le-ghi">Tuần<b>2</b></span></div>
-      <div class="dong-tv" data-mau="ac ăc âc" aria-label="Vần ac, ăc, âc"><span class="le-ghi">Tuần<b>11</b></span></div>
-    </section>
-
-    <section class="thu">
-      <p class="in">Người ta gọi nghề giáo là nghề gieo chữ. Với cô giáo lớp Một, điều đó đúng theo nghĩa đen: những chữ đầu tiên trong đời các con là do cô cầm tay uốn từng nét.</p>
-      <p class="in">Một tiết học chỉ ba mươi lăm phút. Phía sau là những buổi tối soạn bài, làm phiếu, chuẩn bị tranh ảnh và bảng con cho ngày hôm sau. Từng phụ cô soạn những tập giáo án hơn bốn mươi trang mỗi tuần mới thấy hết.</p>
-      <p class="in">Rồi các con 1D sẽ lớn, sẽ quên tên bài học đầu tiên. Nhưng nét chữ các con viết suốt đời vẫn giữ dáng chữ cô dạy năm lớp Một.</p>
-      <p class="in">Nhân ngày Nhà giáo Việt Nam, chúc cô luôn khoẻ, bình an, và giữ mãi niềm vui mỗi sáng bước vào lớp.</p>
-      <p class="viet ky" data-xh="2" data-de="2"><span>Sáng</span></p>
-    </section>
-
-    <section class="cham" aria-label="Chấm điểm">
-      <div class="o-diem">
-        <div class="o-tieu">Điểm</div>
-        <div class="o-tieu">Lời phê</div>
-        <div class="o-so">
-          <svg class="so-10" viewBox="0 0 100 100" role="img" aria-label="Điểm 10">
-            <path class="net-do" pathLength="1" d="M22 36Q30 30 38 21Q36 48 34 76"/>
-            <path class="net-do" pathLength="1" d="M67 22C52 22 47 44 48 57C49 71 57 78 66 77C78 76 84 60 83 46C82 31 75 21 64 23C61 24 59 26 57 29"/>
-            <path class="net-do" pathLength="1" d="M13 87C40 82 66 82 93 85"/>
-            <path class="net-do" pathLength="1" d="M21 94C44 90 65 90 85 92"/>
-          </svg>
-        </div>
-        <div class="o-phe">
-          <p class="viet do" data-xh="1.3" data-de="1" data-nhom="phe"><span>Tận tâm với từng nét chữ của học trò.</span></p>
-          <p class="viet do" data-xh="1.3" data-de="1" data-nhom="phe"><span>Mười điểm, khen cô!</span></p>
-        </div>
-      </div>
-      <button class="nut-cham" id="nut-cham" type="button">Chấm điểm cho cô</button>
-      <p class="sr" id="bao" aria-live="polite"></p>
-    </section>
-
-    <svg class="vat but-tim" aria-hidden="true" viewBox="-6 -12 168 24"><use href="#but-may"/></svg>
-    <svg class="vat but-do" aria-hidden="true" viewBox="-6 -12 154 24"><use href="#but-bi"/></svg>
-  </main>
-</div>
-
-<svg class="ngoi" id="ngoi" aria-hidden="true" width="1" height="1"><g class="xoay"><use id="ngoi-dung" href="#but-may"/></g></svg>
-
-<noscript><style>.ban-dong{display:none}</style></noscript>
+<noscript><style>.canh{display:none}.la-thu{opacity:1;visibility:visible;transform:none}html.dong{overflow:auto}</style></noscript>
+<script src="nhac.js"></script>
+<script src="hat.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
