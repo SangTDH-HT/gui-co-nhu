@@ -6,11 +6,11 @@
 <title>Gửi cô Như</title>
 <meta name="description" content="Một lá thư nhỏ gửi cô Như nhân ngày Nhà giáo Việt Nam 20.11.2026.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#ddd2c6">
+<meta name="theme-color" content="#cfc5b6">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gửi cô Như">
 <meta property="og:description" content="Một lá thư nhỏ nhân ngày Nhà giáo Việt Nam 20.11.">
-<meta property="og:image" content="https://sangtdh-ht.github.io/gui-co-nhu/og.jpg?v=2">
+<meta property="og:image" content="https://sangtdh-ht.github.io/gui-co-nhu/og.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://sangtdh-ht.github.io/gui-co-nhu/">
@@ -26,7 +26,7 @@
 <canvas id="hat" aria-hidden="true"></canvas>
 
 <!-- ======= phong thư ======= -->
-<div class="canh" id="canh">
+<div class="man-thu" id="man-thu">
   <div class="phong" id="phong">
     <span class="bong-phong" aria-hidden="true"></span>
     <span class="lung" aria-hidden="true"></span>
@@ -40,16 +40,16 @@
 
     <svg class="tui" viewBox="0 0 70 100" preserveAspectRatio="none" aria-hidden="true">
       <defs>
-        <linearGradient id="t-trai" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efe6d8"/><stop offset="1" stop-color="#e6dac7"/></linearGradient>
-        <linearGradient id="t-phai" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#ece2d2"/><stop offset="1" stop-color="#e2d5c1"/></linearGradient>
-        <linearGradient id="t-day" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f6efe4"/><stop offset="1" stop-color="#efe5d5"/></linearGradient>
-        <filter id="t-bong" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="-.5" stdDeviation=".7" flood-color="#6b4a2e" flood-opacity=".22"/></filter>
+        <linearGradient id="t-trai" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ebe5dc"/><stop offset="1" stop-color="#e1d9cd"/></linearGradient>
+        <linearGradient id="t-phai" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#e8e1d6"/><stop offset="1" stop-color="#ddd4c6"/></linearGradient>
+        <linearGradient id="t-day" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f3efe8"/><stop offset="1" stop-color="#ebe4d9"/></linearGradient>
+        <filter id="t-bong" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="-.5" stdDeviation=".7" flood-color="#5e4c38" flood-opacity=".22"/></filter>
         <filter id="t-mo" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur stdDeviation="1.2"/></filter>
       </defs>
       <path d="M0 0L35 53L0 100Z" fill="url(#t-trai)"/>
       <path d="M70 0L35 53L70 100Z" fill="url(#t-phai)"/>
       <path d="M0 100L35 47L70 100Z" fill="url(#t-day)" filter="url(#t-bong)"/>
-      <path class="bong-nap" d="M0 0H70L35 57.5Z" fill="#5a3b22" opacity=".2" filter="url(#t-mo)"/>
+      <path class="bong-nap" d="M0 0H70L35 57.5Z" fill="#4e3f2e" opacity=".2" filter="url(#t-mo)"/>
     </svg>
 
     <div class="chu-tui" aria-hidden="true">
@@ -63,25 +63,9 @@
       <span class="mat trong"></span>
     </div>
 
+    <div class="bo-bia" id="bo-bia" aria-hidden="true"></div>
+
     <button class="niem" id="niem" type="button" aria-label="Mở thư">
-      <svg class="canh-hoa" viewBox="-60 -60 120 120" aria-hidden="true">
-        <g stroke-linecap="round" fill="none">
-          <g>
-            <path d="M-2 0C-10-30-6-58 8-88" stroke="#8a7a52" stroke-width="1.4"/>
-            <g fill="#b9a3d6" stroke="none"><ellipse cx="8" cy="-82" rx="3.6" ry="2.3" transform="rotate(70 8 -82)"/><ellipse cx="5" cy="-75" rx="3.5" ry="2.2" transform="rotate(100 5 -75)"/><ellipse cx="2" cy="-68" rx="3.2" ry="2" transform="rotate(80 2 -68)"/><ellipse cx="0" cy="-61" rx="3" ry="2" transform="rotate(105 0 -61)"/><ellipse cx="-1" cy="-54" rx="2.6" ry="1.8" transform="rotate(85 -1 -54)"/></g>
-          </g>
-          <g transform="rotate(50)">
-            <path d="M-8 6C-30 30-52 60-74 98" stroke="#8a7a52" stroke-width="1.6"/>
-            <path d="M-30 46C-40 44-46 50-48 58C-40 58-33 54-30 46Z" fill="#9aa178" stroke="none"/>
-            <g fill="#b9a3d6" stroke="none"><ellipse cx="-64" cy="82" rx="3.6" ry="2.3" transform="rotate(-50 -64 82)"/><ellipse cx="-60" cy="76" rx="3.6" ry="2.3" transform="rotate(-30 -60 76)"/><ellipse cx="-56" cy="70" rx="3.5" ry="2.2" transform="rotate(-60 -56 70)"/><ellipse cx="-52" cy="64" rx="3.2" ry="2" transform="rotate(-35 -52 64)"/><ellipse cx="-48" cy="58" rx="3" ry="2" transform="rotate(-55 -48 58)"/><ellipse cx="-44" cy="52" rx="2.6" ry="1.8" transform="rotate(-40 -44 52)"/></g>
-          </g>
-          <g transform="rotate(-62)">
-            <path d="M4 4C20 34 34 66 42 104" stroke="#8a7a52" stroke-width="1.4"/>
-            <path d="M24 50C34 46 40 50 44 58C36 60 28 58 24 50Z" fill="#9aa178" stroke="none"/>
-            <g fill="#f6f2ea" stroke="#d6ccbb" stroke-width=".5"><circle cx="38" cy="94" r="3.2"/><circle cx="44" cy="88" r="2.8"/><circle cx="33" cy="86" r="2.6"/><circle cx="40" cy="80" r="2.4"/><circle cx="31" cy="76" r="2.1"/><circle cx="36" cy="70" r="1.9"/></g>
-          </g>
-        </g>
-      </svg>
       <span class="nua trai"><svg viewBox="-50 -50 100 100"><use href="#sap"/></svg></span>
       <span class="nua phai"><svg viewBox="-50 -50 100 100"><use href="#sap"/></svg></span>
     </button>
@@ -103,31 +87,13 @@
       <text y="6.5" text-anchor="middle" font-family="EB Garamond, serif" font-size="18" font-weight="500" fill="#5a0911" opacity=".85">20·11</text>
       <ellipse cx="-14" cy="-22" rx="9" ry="4" fill="#fff" opacity=".18" transform="rotate(-30 -14 -22)"/>
     </g>
-    <!-- cành hoa ép khô trên thư -->
-    <g id="hoa-ep">
-      <g stroke-linecap="round" fill="none" stroke="#8d7f57">
-        <path d="M10 150C40 110 70 70 120 20" stroke-width="1.5"/>
-        <path d="M44 106C38 88 40 72 50 58" stroke-width="1.1"/>
-        <path d="M70 76C82 70 96 70 108 76" stroke-width="1.1"/>
-        <path d="M30 128C18 118 8 116 0 118" stroke-width="1"/>
-      </g>
-      <g fill="#a6ad84">
-        <path d="M58 92C50 84 50 74 56 66C62 74 62 84 58 92Z"/><path d="M84 66C88 56 96 52 106 52C102 62 94 66 84 66Z"/><path d="M22 136C14 136 8 130 6 122C14 122 20 128 22 136Z"/>
-      </g>
-      <g fill="#b8a2d6">
-        <ellipse cx="120" cy="20" rx="4" ry="2.6" transform="rotate(-40 120 20)"/><ellipse cx="114" cy="26" rx="4" ry="2.6" transform="rotate(-20 114 26)"/><ellipse cx="109" cy="32" rx="3.8" ry="2.4" transform="rotate(-50 109 32)"/><ellipse cx="104" cy="38" rx="3.6" ry="2.3" transform="rotate(-25 104 38)"/><ellipse cx="99" cy="44" rx="3.4" ry="2.2" transform="rotate(-45 99 44)"/><ellipse cx="95" cy="50" rx="3" ry="2" transform="rotate(-30 95 50)"/>
-        <ellipse cx="50" cy="58" rx="3.4" ry="2.2" transform="rotate(70 50 58)"/><ellipse cx="47" cy="65" rx="3.2" ry="2.1" transform="rotate(100 47 65)"/><ellipse cx="45" cy="72" rx="3" ry="2" transform="rotate(80 45 72)"/>
-      </g>
-      <g fill="#f7f2e8" stroke="#d9cfbe" stroke-width=".5"><circle cx="0" cy="118" r="3"/><circle cx="5" cy="112" r="2.6"/><circle cx="-3" cy="110" r="2.4"/><circle cx="3" cy="105" r="2.1"/><circle cx="108" cy="76" r="2.8"/><circle cx="113" cy="71" r="2.4"/><circle cx="110" cy="82" r="2.2"/></g>
-      <g fill="#e9a8b4"><circle cx="76" cy="62" r="4.5"/><circle cx="76" cy="62" r="2" fill="#d9cf8e"/></g>
-    </g>
   </defs>
 </svg>
 
 <!-- ======= lá thư ======= -->
 <main class="la-thu" id="la-thu" tabindex="-1">
   <article class="giay">
-    <svg class="hoa-ep tren" viewBox="-10 0 140 160" aria-hidden="true"><use href="#hoa-ep"/></svg>
+    <div class="hoa-dau" id="hoa-dau" aria-hidden="true"></div>
     <p class="ngay">Thứ Sáu, ngày 20 tháng 11 năm 2026</p>
     <h1 class="tieu-de"><span>Chúc mừng cô!</span></h1>
     <p class="gui">Gửi cô Như, cô giáo lớp 1D,</p>
@@ -135,8 +101,10 @@
       <p>Chúc mừng 20/11 nha cô giáo.</p>
       <p>Chúc cô luôn khoẻ, vui, ngày nào đứng lớp cũng thấy nhẹ nhàng.</p>
     </div>
-    <p class="ky" id="ky">Sáng</p>
-    <svg class="hoa-ep duoi" viewBox="-10 0 140 160" aria-hidden="true"><use href="#hoa-ep"/></svg>
+    <div class="cuoi-thu">
+      <div class="hoa-cuoi" id="hoa-cuoi" aria-hidden="true"></div>
+      <p class="ky" id="ky">Sáng</p>
+    </div>
   </article>
 </main>
 
@@ -144,7 +112,8 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6l11-2.2v11.7a2.5 2.5 0 1 1-2-2.45V7.4L9 8.8Z" fill="currentColor"/><path class="gach" d="M4 4l16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 </button>
 
-<noscript><style>.canh{display:none}.la-thu{opacity:1;visibility:visible;transform:none}html.dong{overflow:auto}</style></noscript>
+<noscript><style>.man-thu{display:none}.la-thu{opacity:1;visibility:visible;transform:none}html.dong{overflow:auto}</style></noscript>
+<script src="flora.js"></script>
 <script src="nhac.js"></script>
 <script src="hat.js"></script>
 <script src="app.js"></script>

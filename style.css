@@ -1,12 +1,19 @@
+/* Gửi cô Như — cùng phong cách nền thiệp cưới: giấy ngọc trai, nhũ vàng, hoa khô ép, hạt bồ công anh */
+
 :root {
-  --vai: #ddd2c6;
-  --giay: #fbf7ef;
-  --muc: #2f2a4a;
-  --muc-nhat: #6b6178;
+  --giay: #eef0f3;
+  --giay-sang: #f8f9fa;
+  --ban: #cfc5b6;
+  --muc: #3b3536;
+  --muc-nhat: #675e60;
+  --nhu: #a9844e;
+  --nhu-dam: #7e5f33;
   --sap: #a51d2a;
-  --nhu: #9c7a3c;
-  --thao: 'Ephesis', cursive;
-  --in: 'EB Garamond', Georgia, serif;
+
+  --thao: 'Ephesis', 'Segoe Script', cursive;
+  --in: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --dai-nhu: linear-gradient(100deg, #7a5a2e 0%, #a9844e 11%, #e6ce96 21%, #b8935a 31%, #7e5f33 43%, #9e7a45 55%, #f2e2b5 65%, #c29c62 76%, #8a6a3b 88%, #7a5a2e 100%);
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .27 0 0 0 0 .22 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --w: min(86vw, 400px, 52vh);
   color-scheme: light;
 }
@@ -15,10 +22,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  background-color: var(--vai);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(110, 80, 60, .06) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(110, 80, 60, .05) 0 1px, transparent 1px 3px);
+  background: var(--ban) var(--noise);
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
 }
@@ -27,17 +31,9 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: clip;
-  font-family: var(--in);
+  font: 400 19px/1.6 var(--in);
   color: var(--muc);
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 75% 55% at 50% 38%, rgba(255, 251, 244, .75), transparent 72%),
-    radial-gradient(ellipse 130% 100% at 50% 40%, transparent 55%, rgba(90, 62, 40, .22));
+  -webkit-font-smoothing: antialiased;
 }
 
 #hat {
@@ -51,9 +47,23 @@ body::before {
   pointer-events: none;
 }
 
+/* ---------- hoa khô mọc (flora.js) ---------- */
+.hoa-kho { display: block; width: 100%; height: 100%; overflow: visible; }
+.hoa-kho .canh, .hoa-kho .day { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.hoa-kho .la, .hoa-kho .bong { transform: scale(0); opacity: 0; }
+.moc-hoa .hoa-kho .canh { animation: ve-net var(--dt, 1.2s) var(--dl, 0s) cubic-bezier(.45, .05, .3, 1) forwards; }
+.moc-hoa .hoa-kho .day { animation: ve-net 1s var(--dl, 0s) ease-out forwards; }
+.moc-hoa .hoa-kho .la { animation: no-la .8s var(--dl, 0s) cubic-bezier(.2, .9, .3, 1.25) forwards; }
+.moc-hoa .hoa-kho .bong { animation: no-bong 1s var(--dl, 0s) cubic-bezier(.2, .9, .25, 1.35) forwards; }
+@keyframes ve-net { to { stroke-dashoffset: 0; } }
+@keyframes no-la { from { transform: scale(0) rotate(-25deg); opacity: 0; } 40% { opacity: 1; } to { transform: none; opacity: 1; } }
+@keyframes no-bong { from { transform: scale(0) rotate(-50deg); opacity: 0; } 50% { opacity: 1; } to { transform: none; opacity: 1; } }
+@keyframes lay-gio { 0%, 100% { transform: rotate(-.7deg); } 50% { transform: rotate(.8deg); } }
+@keyframes anh-nhu { to { background-position: 200% 0; } }
+
 /* ================= phong thư ================= */
 
-.canh {
+.man-thu {
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -63,9 +73,12 @@ body::before {
   justify-content: center;
   gap: 34px;
   padding: 16px;
+  background: radial-gradient(130% 100% at 50% 32%, #ece6dd 0%, #d4cabc 55%, #b5a998 100%);
   transition: opacity .8s ease, transform 1s ease;
 }
-.canh.tan { opacity: 0; transform: scale(1.05); pointer-events: none; }
+.man-thu::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--noise); }
+.man-thu.tan { opacity: 0; transform: scale(1.05); pointer-events: none; }
+.man-thu > * { position: relative; z-index: 1; }
 
 .phong {
   position: relative;
@@ -74,22 +87,23 @@ body::before {
   transform: rotate(-2deg);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: transform 1.3s cubic-bezier(.3, .7, .2, 1);
 }
 @supports not (aspect-ratio: 1) { .phong { height: calc(var(--w) / .7); } }
 
 .bong-phong, .lung { position: absolute; inset: 0; border-radius: 5px; }
 .bong-phong {
   box-shadow:
-    0 1px 1px rgba(80, 50, 30, .25),
-    0 18px 34px -8px rgba(80, 50, 30, .42),
-    0 44px 70px -30px rgba(80, 50, 30, .38);
+    0 1px 1px rgba(60, 45, 30, .22),
+    0 18px 34px -8px rgba(60, 45, 30, .4),
+    0 44px 70px -30px rgba(60, 45, 30, .36);
 }
 .lung {
-  background-color: #c99aa0;
+  background-color: #cdbfae;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23f6e7df' stroke-width='1' opacity='.75'%3E%3Ccircle cx='11' cy='11' r='3'/%3E%3Cpath d='M11 4v-2M11 18v2M4 11h-2M18 11h2'/%3E%3Ccircle cx='33' cy='33' r='3'/%3E%3Cpath d='M33 26v-2M33 40v2M26 33h-2M40 33h2'/%3E%3C/g%3E%3Cg fill='%23d9b46a' opacity='.8'%3E%3Ccircle cx='33' cy='11' r='1.2'/%3E%3Ccircle cx='11' cy='33' r='1.2'/%3E%3C/g%3E%3C/svg%3E"),
-    linear-gradient(180deg, rgba(0, 0, 0, .18), transparent 40%);
-  box-shadow: inset 0 0 0 1px rgba(90, 40, 40, .15);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23f4ede2' stroke-width='1' opacity='.7'%3E%3Ccircle cx='11' cy='11' r='3'/%3E%3Cpath d='M11 4v-2M11 18v2M4 11h-2M18 11h2'/%3E%3Ccircle cx='33' cy='33' r='3'/%3E%3Cpath d='M33 26v-2M33 40v2M26 33h-2M40 33h2'/%3E%3C/g%3E%3Cg fill='%23a9844e' opacity='.75'%3E%3Ccircle cx='33' cy='11' r='1.2'/%3E%3Ccircle cx='11' cy='33' r='1.2'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(0, 0, 0, .16), transparent 40%);
+  box-shadow: inset 0 0 0 1px rgba(80, 60, 40, .15);
 }
 
 .thu-nho {
@@ -101,8 +115,8 @@ body::before {
   z-index: 2;
   padding: 9% 8% 0;
   border-radius: 2px;
-  background: var(--giay);
-  box-shadow: 0 0 0 1px rgba(80, 50, 30, .06), 0 2px 6px rgba(80, 50, 30, .16);
+  background: var(--giay-sang) var(--noise);
+  box-shadow: 0 0 0 1px rgba(60, 45, 30, .06), 0 2px 6px rgba(60, 45, 30, .16);
   text-align: center;
   overflow: hidden;
   transition: transform 1.3s cubic-bezier(.3, .7, .2, 1);
@@ -112,14 +126,14 @@ body::before {
 .tn-tieu {
   margin-top: 4% !important;
   font: 400 calc(var(--w) * .135)/1.15 var(--thao);
-  background: linear-gradient(100deg, #8e6a2a 0%, #e9cf88 25%, #b48a3e 48%, #f6e3a8 62%, #a07630 82%, #dcbc6c 100%);
+  background: var(--dai-nhu);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .tn-gui { margin-top: 5% !important; text-align: left; font: 400 calc(var(--w) * .07)/1.2 var(--thao); }
-.tn-dong { display: block; height: calc(var(--w) * .012); margin: 5% 0 0; border-radius: 2px; background: rgba(47, 42, 74, .14); }
-.tn-dong.ngan { width: 60%; }
+.tn-dong { display: block; height: calc(var(--w) * .012); margin: 5% 0 0; border-radius: 2px; background: rgba(59, 53, 54, .13); }
+.tn-dong.ngan { width: 70%; }
 
 .tui {
   position: absolute;
@@ -142,8 +156,8 @@ body::before {
 }
 .chu-tui p { margin: 0; }
 .ct-gui { font: 400 calc(var(--w) * .135)/1.1 var(--thao); color: var(--muc); }
-.ct-lop { margin-top: 3% !important; font: italic 400 calc(var(--w) * .043)/1.3 var(--in); color: #574d68; }
-.ct-ngay { margin-top: 4% !important; font: 500 calc(var(--w) * .036)/1 var(--in); letter-spacing: .14em; color: var(--nhu); }
+.ct-lop { margin-top: 3% !important; font: italic 400 calc(var(--w) * .043)/1.3 var(--in); color: var(--muc-nhat); }
+.ct-ngay { margin-top: 4% !important; font: 500 calc(var(--w) * .036)/1 var(--in); letter-spacing: .14em; color: var(--nhu-dam); }
 
 .nap {
   position: absolute;
@@ -167,19 +181,17 @@ body::before {
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, .45), transparent 22%),
-    linear-gradient(180deg, #f4ecdf, #e8dbc7);
+    var(--noise),
+    linear-gradient(180deg, #f1ece4, #e4dccf);
   border-radius: 5px 5px 0 0;
 }
 .nap .trong {
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
   transform: rotateX(180deg);
-  background-color: #c99aa0;
-  background-image: inherit;
-}
-.nap .trong {
+  background-color: #cdbfae;
   background-image:
-    linear-gradient(0deg, rgba(0, 0, 0, .2), transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23f6e7df' stroke-width='1' opacity='.75'%3E%3Ccircle cx='11' cy='11' r='3'/%3E%3Cpath d='M11 4v-2M11 18v2M4 11h-2M18 11h2'/%3E%3Ccircle cx='33' cy='33' r='3'/%3E%3Cpath d='M33 26v-2M33 40v2M26 33h-2M40 33h2'/%3E%3C/g%3E%3Cg fill='%23d9b46a' opacity='.8'%3E%3Ccircle cx='33' cy='11' r='1.2'/%3E%3Ccircle cx='11' cy='33' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(0deg, rgba(0, 0, 0, .18), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23f4ede2' stroke-width='1' opacity='.7'%3E%3Ccircle cx='11' cy='11' r='3'/%3E%3Cpath d='M11 4v-2M11 18v2M4 11h-2M18 11h2'/%3E%3Ccircle cx='33' cy='33' r='3'/%3E%3Cpath d='M33 26v-2M33 40v2M26 33h-2M40 33h2'/%3E%3C/g%3E%3Cg fill='%23a9844e' opacity='.75'%3E%3Ccircle cx='33' cy='11' r='1.2'/%3E%3Ccircle cx='11' cy='33' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 html.mo-nap .nap { transform: perspective(1100px) rotateX(180deg); }
@@ -187,7 +199,21 @@ html.mo-nap .bong-nap { opacity: 0; }
 html.sau-nap .nap { z-index: 1; }
 html.rut .thu-nho { transform: translateY(-50%); }
 html.rut .phong { transform: rotate(-1deg) translateY(16%); }
-.phong { transition: transform 1.3s cubic-bezier(.3, .7, .2, 1); }
+
+/* bó hoa khô cài trên nắp, gốc buộc dưới dấu sáp */
+.bo-bia {
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  z-index: 5;
+  width: 74%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition: opacity .6s ease, transform .9s ease;
+}
+.bo-bia .hoa-kho { transform-origin: 50% 100%; animation: lay-gio 9s ease-in-out infinite; }
+html.vo-niem .bo-bia { opacity: 0; transform: translateX(-50%) translateY(10%) rotate(4deg); }
 
 /* dấu sáp */
 .niem {
@@ -204,15 +230,7 @@ html.rut .phong { transform: rotate(-1deg) translateY(16%); }
   transform: translate(-50%, -50%);
   -webkit-tap-highlight-color: transparent;
 }
-.niem:focus-visible { outline: 3px solid var(--sap); outline-offset: 10px; border-radius: 50%; }
-.canh-hoa {
-  position: absolute;
-  inset: -12%;
-  width: 124%;
-  height: 124%;
-  overflow: visible;
-  transition: opacity .5s ease, transform .8s ease;
-}
+.niem:focus-visible { outline: 2px solid var(--nhu-dam); outline-offset: 10px; border-radius: 50%; }
 .nua {
   position: absolute;
   inset: 0;
@@ -228,12 +246,11 @@ html.vo-niem .niem { pointer-events: none; }
 html.vo-niem .nua { animation: none !important; }
 html.vo-niem .nua.trai { transform: translate(-38%, 75%) rotate(-38deg); opacity: 0; }
 html.vo-niem .nua.phai { transform: translate(40%, 85%) rotate(32deg); opacity: 0; }
-html.vo-niem .canh-hoa { opacity: 0; transform: translateY(18%) rotate(8deg); }
 
 .goi-y {
   margin: 0;
-  color: #7a5f4c;
-  font: italic 400 17px/1.3 var(--in);
+  font: italic 500 18px/1.3 var(--in);
+  color: var(--muc-nhat);
   transition: opacity .4s ease;
 }
 html.vo-niem .goi-y { opacity: 0; }
@@ -248,7 +265,7 @@ html.vo-niem .goi-y { opacity: 0; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 56px 16px;
+  padding: 48px 16px;
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 1s ease, transform 1.1s cubic-bezier(.2, .7, .2, 1);
@@ -260,75 +277,99 @@ html.doc .la-thu { opacity: 1; transform: none; }
 .giay {
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 64px 64px 72px;
-  border-radius: 3px;
-  background-color: var(--giay);
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, rgba(255, 255, 255, .6), transparent 18%);
+  padding: 0 56px 64px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  background: var(--giay) var(--noise);
   box-shadow:
-    0 1px 1px rgba(80, 50, 30, .2),
-    0 22px 44px -14px rgba(80, 50, 30, .38),
-    0 60px 90px -50px rgba(80, 50, 30, .35);
+    0 1px 1px rgba(60, 45, 30, .18),
+    0 24px 48px -16px rgba(60, 45, 30, .38),
+    0 60px 90px -50px rgba(60, 45, 30, .32);
 }
 .giay p { margin: 0; }
 
+.hoa-dau {
+  position: relative;
+  align-self: flex-end;
+  width: min(92%, 440px);
+  aspect-ratio: 620 / 470;
+  margin: -34px -70px -40px 0;
+  pointer-events: none;
+}
+.hoa-dau .hoa-kho { transform-origin: 100% 100%; animation: lay-gio 9s ease-in-out infinite; }
+
 .ngay {
-  text-align: right;
+  position: relative;
+  text-align: center;
   font: italic 400 17px/1.4 var(--in);
   color: var(--muc-nhat);
 }
 .tieu-de {
-  margin: 22px 0 0;
+  margin: 10px 0 0;
   text-align: center;
   white-space: nowrap;
-  font: 400 clamp(44px, 12.4vw, 96px)/1.15 var(--thao);
+  font: 400 clamp(44px, 12.4vw, 88px)/1.15 var(--thao);
 }
 .tieu-de span {
   display: inline-block;
-  padding: 0 .25em;
-  background: linear-gradient(100deg, #8e6a2a 0%, #e9cf88 25%, #b48a3e 48%, #f6e3a8 62%, #a07630 82%, #dcbc6c 100%);
+  padding: .1em .3em .2em;
+  background: var(--dai-nhu);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(90, 60, 20, .25));
+  filter: drop-shadow(0 .5px 0 rgba(255, 255, 255, .6)) drop-shadow(0 1px 1px rgba(90, 60, 25, .22));
+  animation: anh-nhu 9s linear infinite;
 }
 .js .tieu-de.cho span, .js .tieu-de.dang span {
   -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--p, 0) * (100% + 40px) - 40px), transparent calc(var(--p, 0) * (100% + 40px)));
   mask-image: linear-gradient(90deg, #000 calc(var(--p, 0) * (100% + 40px) - 40px), transparent calc(var(--p, 0) * (100% + 40px)));
 }
 .gui {
-  margin-top: 26px !important;
-  font: 400 clamp(32px, 8.4vw, 42px)/1.2 var(--thao);
+  margin-top: 18px !important;
+  font: 400 clamp(32px, 8.4vw, 40px)/1.2 var(--thao);
+  color: #2c3a5e;
 }
-.than { margin-top: 18px; }
+.than { margin-top: 14px; }
 .than p {
   font-size: 22px;
   line-height: 1.7;
   text-wrap: pretty;
-  hyphens: none;
 }
-.than p + p { margin-top: .5em; }
-.ky {
-  margin-top: 30px !important;
-  padding-right: 6%;
-  text-align: right;
-  font: 400 60px/1 var(--thao);
-}
+.than p + p { margin-top: .4em; }
 
-.hoa-ep { position: absolute; pointer-events: none; overflow: visible; filter: drop-shadow(1px 2px 1.5px rgba(80, 50, 30, .25)); }
-.hoa-ep.tren { width: 150px; left: -26px; top: -30px; transform: rotate(-8deg); }
-.hoa-ep.duoi { width: 120px; right: -18px; bottom: -22px; transform: rotate(172deg); }
+.cuoi-thu {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+.hoa-cuoi {
+  width: 110px;
+  aspect-ratio: 170 / 230;
+  margin: 0 0 -30px -18px;
+  pointer-events: none;
+}
+.hoa-cuoi .hoa-kho { transform-origin: 50% 100%; animation: lay-gio 8s ease-in-out infinite; }
+.ky {
+  padding-right: 4%;
+  font: 400 60px/1 var(--thao);
+  color: #2c3a5e;
+}
 
 @media (max-width: 600px) {
-  .la-thu { padding: 40px 16px; }
-  .giay { padding: 52px 24px 56px; }
-  .than p { font-size: 20px; line-height: 1.7; }
-  .ky { font-size: 52px; }
-  .hoa-ep.tren { width: 112px; left: -18px; top: -26px; }
-  .hoa-ep.duoi { width: 92px; right: -10px; bottom: -18px; }
+  .la-thu { padding: 0; justify-content: flex-start; }
+  .giay { max-width: none; min-height: 100svh; padding: 0 26px 48px; border-radius: 0; box-shadow: none; }
+  .ngay { margin-top: auto !important; }
+  .cuoi-thu { margin-bottom: auto; }
+  .hoa-dau { width: 104%; margin: -10px -40px -36px 0; }
+  .than p { font-size: 20px; }
+  .ky { font-size: 54px; }
+  .hoa-cuoi { width: 92px; }
 }
 
 /* nút nhạc */
@@ -337,16 +378,16 @@ html.doc .la-thu { opacity: 1; transform: none; }
   top: max(14px, env(safe-area-inset-top));
   right: 14px;
   z-index: 40;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(251, 247, 239, .92);
-  color: var(--sap);
-  box-shadow: 0 2px 10px rgba(80, 50, 30, .25), inset 0 0 0 1px rgba(165, 29, 42, .15);
+  background: radial-gradient(circle at 35% 30%, #fffdf8, #ece6dd);
+  color: var(--nhu-dam);
+  box-shadow: 0 0 0 1px rgba(169, 132, 78, .35), 0 0 0 5px rgba(255, 255, 255, .5), 0 4px 12px rgba(60, 45, 30, .25);
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -355,11 +396,13 @@ html.doc .la-thu { opacity: 1; transform: none; }
 .nut-nhac svg { width: 22px; height: 22px; }
 .nut-nhac .gach { opacity: 0; }
 .nut-nhac[aria-pressed="false"] .gach { opacity: 1; }
-.nut-nhac[aria-pressed="false"] { color: #8a7f8f; }
-.nut-nhac:focus-visible { outline: 3px solid var(--sap); outline-offset: 3px; }
+.nut-nhac[aria-pressed="false"] { color: #9a8f86; }
+.nut-nhac:focus-visible { outline: 2px solid var(--nhu-dam); outline-offset: 4px; }
 html.co-nhac .nut-nhac { opacity: 1; pointer-events: auto; }
 
 @media (prefers-reduced-motion: reduce) {
-  .canh, .la-thu, .nap, .thu-nho, .nua, .canh-hoa { transition: none !important; }
-  .js .niem .nua.trai, .js .niem .nua.phai { animation: none; }
+  .man-thu, .la-thu, .nap, .thu-nho, .nua, .bo-bia, .phong { transition: none !important; }
+  .js .niem .nua.trai, .js .niem .nua.phai, .tieu-de span, .hoa-kho { animation: none !important; }
+  .hoa-kho .canh, .hoa-kho .day { stroke-dashoffset: 0; }
+  .hoa-kho .la, .hoa-kho .bong { transform: none; opacity: 1; }
 }
