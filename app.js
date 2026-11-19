@@ -384,7 +384,7 @@
 
   const choFont = Promise.race([
     Promise.all([
-      document.fonts.load('340 100px "Playwrite VN"', 'Cảm ơn cô'),
+      document.fonts.load('340 100px "Playwrite VN"', 'Chúc mừng cô'),
       document.fonts.load('350 18px "Lexend"', 'Người ta'),
     ]).then(() => document.fonts.ready),
     doi(3500),
