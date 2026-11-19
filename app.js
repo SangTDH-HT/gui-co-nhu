@@ -50,6 +50,8 @@
     canh.remove();
     laThu.focus({ preventScroll: true });
     await vietTieuDe();
+    await doi(300);
+    HatBay.mua(80);
   }
 
   function vietTieuDe() {
@@ -87,16 +89,4 @@
       nutNhac.setAttribute('aria-label', 'Tắt nhạc');
     }
   });
-
-  // đọc tới chữ ký thì cánh hoa và nhũ rơi (một lần)
-  const ky = $('#ky');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(es => {
-      if (es.some(e => e.isIntersecting) && html.classList.contains('doc')) {
-        io.disconnect();
-        HatBay.mua(80);
-      }
-    }, { threshold: 1 });
-    io.observe(ky);
-  }
 })();
